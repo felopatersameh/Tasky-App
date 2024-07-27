@@ -1,0 +1,1 @@
+import 'package:flutter/material.dart';extension IntExtension on int {  Widget get sH => SizedBox(        height: toDouble(),      );  Widget get sW => SizedBox(        width: toDouble(),      );}

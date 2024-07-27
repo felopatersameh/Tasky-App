@@ -1,0 +1,1 @@
+import 'package:dartz/dartz.dart';import '../../../../Core/Utils/Errors/failure.dart';import '../remote/models/LoginModel.dart';//dart pub add dartzabstract class LoginRepo {  Future<Either<Failure, LoginModel>> fetchLogin({    required String phone,    required String password,  });}
