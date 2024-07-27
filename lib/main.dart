@@ -16,9 +16,10 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CashHelper.init();
-
   runApp(const MyApp());
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

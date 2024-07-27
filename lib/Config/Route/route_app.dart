@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tasky/Features/Login/presentation/pages/login_screen.dart';
 import 'package:tasky/Features/Start/start_screen.dart';
 
+import '../../Features/MyTasks/presentation/pages/my_tasks_screen.dart';
 import '../../Features/SignUp/presentation/pages/sing_up_screen.dart';
 import '../../Features/Splash/splash_screen.dart';
 
@@ -10,10 +11,9 @@ class Routes {
   static const String routeInStart = '/Start';
   static const String routeLogin = '/login';
   static const String routeCreateAccount = '/createAccount';
-  static const String routeLayout = '/ShopLayout';
-  static const String routeHome = '/ShopHome';
-  static const String routeShop = '/Shop';
-  static const String routeFavorite = '/Favorite';
+  static const String routeTask = '/Task';
+  static const String routeHome = '/Home';
+  static const String routeAddNew = '/AddNew';
   static const String routeProfile = '/Profile';
 }
 
@@ -32,8 +32,8 @@ class GeneratorRoutes {
       //   return MaterialPageRoute(builder: (_) => const LayoutScreen());
       // case (Routes.routeHome):
       //   return MaterialPageRoute(builder: (_) => const HomeScreen());
-      // case (Routes.routeShop):
-      //   return MaterialPageRoute(builder: (_) => const ShopScreen());
+      case (Routes.routeHome):
+        return MaterialPageRoute(builder: (_) => const TaskManagementScreen());
       // case (Routes.routeFavorite):
       //   return MaterialPageRoute(builder: (_) => const FavoriteScreen());
       // case (Routes.routeProfile):

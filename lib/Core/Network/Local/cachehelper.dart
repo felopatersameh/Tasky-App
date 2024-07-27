@@ -30,6 +30,9 @@ class CashHelper {
     if (value is double) {
       return await sharedPreferences?.setDouble(key, value);
     }
+    if (value is List<String>) {
+      return await sharedPreferences?.setStringList(key, value );
+    }
   }
 
   static dynamic removeData({

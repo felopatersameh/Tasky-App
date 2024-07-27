@@ -5,6 +5,7 @@ import '../../Core/Resources/colors.dart';
 
 
 ThemeData themes = ThemeData(
+
   scaffoldBackgroundColor: AppColors.colorsBackGround,
   appBarTheme: const AppBarTheme(
     // titleTextStyle: getTextCustomAppBar(),
