@@ -43,6 +43,12 @@ class AppColors {
   static const Color colorTitleInProfile = Color(0xff2F2F2F);
   static const Color colorTextInProfile = Color(0xff2F2F2F);
 
+  // tab bar
+  static const Color colorBackGroundTabBarSelected = colorPrimary;
+  static const Color colorBackGroundTabBarUnSelected = Color(0xffF0ECFF);
+  static const Color colorLabelTabBarSelected = colorsText2;
+  static const Color colorLabelTabBarUnSelected = Color(0xff7C7C80);
+
 }
 
 //----------------------------------------------

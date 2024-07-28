@@ -58,3 +58,11 @@ TextStyle getSmallText2() => _getTextStyle(
     SizeFontManger.s18, WeightFontManger.w700, AppColors.colorTextInProfile);
 
 //--------------------------------------------------------------------- Custom
+TextStyle getItemTitle() => _getTextStyle(
+    SizeFontManger.s16, WeightFontManger.w700, AppColors.colorsText1);
+
+TextStyle getItemDesc() => _getTextStyle(SizeFontManger.s14,
+    WeightFontManger.w400, AppColors.colorPrimaryText.withOpacity(.6));
+
+TextStyle getItemPriority() => getSmallText1();
+TextStyle getItemDue() => getSmallText1().copyWith(fontWeight:WeightFontManger.w400 );
