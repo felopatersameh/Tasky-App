@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tasky/Features/Login/presentation/pages/login_screen.dart';
 import 'package:tasky/Features/Start/start_screen.dart';
 
-import '../../Features/MyTasks/presentation/pages/my_tasks_screen.dart';
+import '../../Features/Home/presentation/pages/my_tasks_screen.dart';
+import '../../Features/Profile/presentation/pages/profile_screen.dart';
 import '../../Features/SignUp/presentation/pages/sing_up_screen.dart';
 import '../../Features/Splash/splash_screen.dart';
 
@@ -36,8 +37,8 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const TaskManagementScreen());
       // case (Routes.routeFavorite):
       //   return MaterialPageRoute(builder: (_) => const FavoriteScreen());
-      // case (Routes.routeProfile):
-      //   return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case (Routes.routeProfile):
+        return MaterialPageRoute(builder: (_) =>  const ProfileScreen());
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold());
     }

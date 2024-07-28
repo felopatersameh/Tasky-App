@@ -1,19 +1,9 @@
-// Future<void> logIn(context, String state) async {
-//   return await CashHelper.saveData(key: AppPoint.saveUserID, value: state)
-//       .then((value) {
-//     getAllData(context).then((value) {
-//       AppCubit.get(context).getDataUser(state);
-//     }).then((value) {
-//       showMessage(text: AppStrings.success, state: ToastStates.succeed);
-//       pushReplacement(context, AppRoutes.homeRoute);
-//     });
-//   }).catchError((error) {});
-// }
-
 import 'package:tasky/Core/Resources/string.dart';
-
 import '../../Features/Login/presentation/manager/log_in_cubit.dart';
 import '../../Features/SignUp/presentation/manager/sing_up_cubit.dart';
+import '../Network/Local/cachehelper.dart';
+import '../Network/Remote/dio.dart';
+import '../Network/Remote/endpoints.dart';
 
 Future<void> validateLogIn(context,
     {var key, required String password, required String phone}) async {
@@ -134,4 +124,32 @@ String? validatePhone(String phone) {
   //   return 'The phone number is already registered.';
   // }
   return null;
+}
+
+Future<String?> refreshToken() async {
+  final refreshToken = CashHelper.getData(key: 'RefreshToken');
+  await DioHelper.getData(
+    path: AppEndPoint.refresh,
+    queryParameters: {'token': refreshToken},
+  ).then((onValue) {
+    print('access_token: ${onValue.data['access_token']}');
+    if (onValue.statusCode == 200) {
+      final newTokens = onValue.data;
+      String newAccessToken = newTokens['access_token'];
+      CashHelper.saveData(key: 'Token', value: newAccessToken);
+      print('access_token: $newAccessToken');
+      return newAccessToken;
+    }
+  }).catchError((onError) {
+    return onError.toString();
+  });
+  return null;
+}
+
+String formatDate2(String dateTime2) {
+  DateTime dateTime = DateTime.parse(dateTime2);
+  final day = dateTime.day;
+  final month = dateTime.month;
+  final year = dateTime.year;
+  return "$day/$month/$year";
 }

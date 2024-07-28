@@ -38,6 +38,11 @@ class AppColors {
 // Navigation
   static const Color colorSelected = Color(0xff4A5562);
   static const Color colorUnSelected = Color(0xff97ADB6);
+  //  in profile
+  static const Color colorBackGroundInFieldsProfile = Color(0xffF5F5F5);
+  static const Color colorTitleInProfile = Color(0xff2F2F2F);
+  static const Color colorTextInProfile = Color(0xff2F2F2F);
+
 }
 
 //----------------------------------------------

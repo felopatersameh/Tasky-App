@@ -1,0 +1,1 @@
+import 'package:dartz/dartz.dart';import '../models/ProfileModel.dart';import '../../../../Core/Utils/Errors/failure.dart';abstract class ProfileReo {  Future<Either<Failure, ProfileModel>> fetchLogin();}

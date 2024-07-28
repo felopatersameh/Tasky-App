@@ -1,0 +1,1 @@
+part of 'home_cubit.dart';@immutablesealed class HomeState {}final class HomeInitial extends HomeState {}class HomeLoading extends HomeState {}class HomeSuccess extends HomeState {  final List<TaskModel> model;  HomeSuccess({required this.model});}class HomeFailed extends HomeState {  final String error;  HomeFailed({required this.error});}

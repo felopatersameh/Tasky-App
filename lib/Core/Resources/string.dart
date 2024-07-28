@@ -21,13 +21,14 @@ class AppStrings {
   static const String phoneValidate = 'Input Your $phone Please';
 
   static const String experienceYears = 'Years of experience...';
-  static const String experienceYearsValidate = 'Input Your $experienceYears Please';
+  static const String experienceYearsValidate =
+      'Input Your $experienceYears Please';
 
   static const String address = 'Address';
   static const String addressValidate = 'Input Your $address Please';
 
-  static const String  experience = '';
-  static const String  experienceValidate = 'Input Your $experience Please';
+  static const String experience = '';
+  static const String experienceValidate = 'Input Your $experience Please';
 
   static const String loginSeparatorText = 'Or $login With';
 
@@ -42,4 +43,12 @@ class AppStrings {
   static const String titleINStart = 'Task Management & To-Do List';
   static const String descriptionINStart =
       'This productive tool is designed to help you better manage your task project-wise conveniently!';
+
+//----------------------------------------------------- For Home
+  static const String statusA = 'All';
+  static const String statusW = 'waiting';
+  static const String statusP = 'In progress';
+  static const String statusF = 'Finished';
+  static const String titleINAppBar = 'Logo';
+  static const String titleList = 'My Tasks';
 }

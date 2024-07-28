@@ -5,7 +5,6 @@ class AppEndPoint
  static const String login ='auth/login';
  static const String register ='auth/register';
  static const String profile ='auth/profile';
- static const String home ='home';
- static const String category ='categories';
- static const String favorite ='favorites';
+ static const String list ='todos';
+ static const String refresh ='auth/refresh-token';
 }

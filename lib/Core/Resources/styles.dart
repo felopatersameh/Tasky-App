@@ -50,4 +50,11 @@ TextStyle getTextField() => getMediumText();
 
 TextStyle getTextButton() => _getTextStyle(
     SizeFontManger.s18, WeightFontManger.w700, AppColors.colorsText2);
+
+TextStyle getSmallText1() => _getTextStyle(
+    SizeFontManger.s12, WeightFontManger.w500, AppColors.colorTitleInProfile);
+
+TextStyle getSmallText2() => _getTextStyle(
+    SizeFontManger.s18, WeightFontManger.w700, AppColors.colorTextInProfile);
+
 //--------------------------------------------------------------------- Custom

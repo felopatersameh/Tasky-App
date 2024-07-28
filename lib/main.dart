@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tasky/Config/Themes/thems.dart';
+import 'package:tasky/Features/Home/domain/repositories/home_repo_impl.dart';
+import 'package:tasky/Features/Home/presentation/manager/home_cubit.dart';
 import 'package:tasky/Features/Login/domain/repositories/repo_impl_login.dart';
 import 'package:tasky/Features/Login/presentation/manager/log_in_cubit.dart';
+import 'package:tasky/Features/Profile/domain/repositories/profile_repo_impl.dart';
+import 'package:tasky/Features/Profile/presentation/manager/profile_cubit.dart';
 
 import 'Config/Route/route_app.dart';
 import 'Core/Network/Local/cachehelper.dart';
@@ -16,10 +20,10 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CashHelper.init();
+  // String ? token =CashHelper.getData(key: "RefreshToken");
+  // print(token);
   runApp(const MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,6 +37,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SingUpCubit(SingUpRepoImpl()),
+        ),
+        BlocProvider(
+          create: (context) => ProfileCubit(ProfileRepoImpl())..getData(),
+        ),
+        BlocProvider(
+          create: (context) => HomeCubit(HomeRepoImpl())..getListTasks(),
         ),
       ],
       child: MaterialApp(
