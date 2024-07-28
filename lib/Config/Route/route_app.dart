@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasky/Features/Home/data/models/TaskModel.dart';
 import 'package:tasky/Features/Login/presentation/pages/login_screen.dart';
 import 'package:tasky/Features/Start/start_screen.dart';
 
@@ -6,6 +7,7 @@ import '../../Features/Home/presentation/pages/home_screen.dart';
 import '../../Features/Profile/presentation/pages/profile_screen.dart';
 import '../../Features/SignUp/presentation/pages/sing_up_screen.dart';
 import '../../Features/Splash/splash_screen.dart';
+import '../../Features/TaskDetails/presentation/pages/taks_details_screen.dart';
 
 class Routes {
   static const String routeInSplash = '/';
@@ -29,16 +31,17 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case (Routes.routeCreateAccount):
         return MaterialPageRoute(builder: (_) => const SingUpScreen());
-      // case (Routes.routeLayout):
-      //   return MaterialPageRoute(builder: (_) => const LayoutScreen());
-      // case (Routes.routeHome):
-      //   return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case (Routes.routeTask):
+        return MaterialPageRoute(
+            builder: (_) => TaskDetailsScreen(
+                  item: setting.arguments as TaskModel,
+                ));
       case (Routes.routeHome):
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      // case (Routes.routeFavorite):
-      //   return MaterialPageRoute(builder: (_) => const FavoriteScreen());
       case (Routes.routeProfile):
-        return MaterialPageRoute(builder: (_) =>  const ProfileScreen());
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+        case (Routes.routeAddNew):
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold());
     }

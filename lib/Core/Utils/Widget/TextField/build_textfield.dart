@@ -9,21 +9,22 @@ class DefaultTextFormField extends StatefulWidget {
   final TextInputType type;
   final IconData? suffix;
   final bool? isPassword;
-  final TextEditingController controller;
+  final TextEditingController ? controller;
   final Function()? pressSuffix;
-  final String? Function(String?) inputValidator;
+  final String? Function(String?)? inputValidator;
   final ValueChanged<String>? submitted;
+  final void Function()? onTap ;
 
   const DefaultTextFormField(
       {super.key,
       required this.text,
       required this.type,
       this.suffix,
-      required this.inputValidator,
+       this.inputValidator,
       this.submitted,
       this.isPassword,
       this.pressSuffix,
-      required this.controller});
+       this.controller, this.onTap});
 
   @override
   State<DefaultTextFormField> createState() => _DefaultTextFormFieldState();
@@ -36,6 +37,7 @@ class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextFormField(
+          onTap:widget.onTap ,
           style: getTextField(),
           onFieldSubmitted: widget.submitted,
           controller: widget.controller,

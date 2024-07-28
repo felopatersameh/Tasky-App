@@ -1,0 +1,1 @@
+import 'package:dartz/dartz.dart';import '../../../../Core/Utils/Errors/failure.dart';abstract class TaskRepo {  Future<Either<Failure, bool>> removeTask({required String id});}

@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:tasky/Core/Resources/string.dart';
 import '../../Features/Login/presentation/manager/log_in_cubit.dart';
 import '../../Features/SignUp/presentation/manager/sing_up_cubit.dart';
@@ -26,7 +27,7 @@ Future<void> validateSingIn(
     return SingUpCubit.get(context).singUp(
         password: password,
         phone: phone,
-        name: phone,
+        name: name,
         experienceYears: experienceYears,
         address: address,
         level: level);
@@ -144,6 +145,14 @@ Future<String?> refreshToken() async {
     return onError.toString();
   });
   return null;
+}
+
+String formatDate(String dateTime2) {
+  DateTime dateTime = DateTime.parse(dateTime2);
+  final day = dateTime.day;
+  final month = DateFormat.MMMM().format(dateTime);
+  final year = dateTime.year;
+  return "$day $month,$year";
 }
 
 String formatDate2(String dateTime2) {

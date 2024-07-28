@@ -7,4 +7,5 @@ class AppEndPoint
  static const String profile ='auth/profile';
  static const String list ='todos';
  static const String refresh ='auth/refresh-token';
+ static const String delete ='todos/';
 }

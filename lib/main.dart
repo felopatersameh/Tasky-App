@@ -7,6 +7,8 @@ import 'package:tasky/Features/Login/domain/repositories/repo_impl_login.dart';
 import 'package:tasky/Features/Login/presentation/manager/log_in_cubit.dart';
 import 'package:tasky/Features/Profile/domain/repositories/profile_repo_impl.dart';
 import 'package:tasky/Features/Profile/presentation/manager/profile_cubit.dart';
+import 'package:tasky/Features/TaskDetails/domain/repositories/task_repo_impl.dart';
+import 'package:tasky/Features/TaskDetails/presentation/manager/task_cubit.dart';
 
 import 'Config/Route/route_app.dart';
 import 'Core/Network/Local/cachehelper.dart';
@@ -43,6 +45,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => HomeCubit(HomeRepoImpl())..getListTasks(),
+        ),
+        BlocProvider(
+          create: (context) => TaskCubit(TaskRepoImpl()),
         ),
       ],
       child: MaterialApp(

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 
 /// basic Tap
-Future<void> pushNext(context, String screen) async {
-  await Navigator.pushNamed(
-      context, screen,);
+Future<void> pushNext(context, String screen , {Object? arguments}) async {
+  await Navigator.pushNamed(context, screen, arguments: arguments);
 }
 
 // Future<void> pushNextByInformation(context, {
@@ -31,7 +30,8 @@ Future<void> pushNext(context, String screen) async {
 //       'task':task
 //     },
 //   );
-// }Future<void> pushNextInAddItem(context,ModelPost task ) async {
+// }
+// Future<void> pushNextInAddItem(context,ModelPost task ) async {
 //   await Navigator.pushNamed(
 //     context,
 //     AppRoutes.addItem,
