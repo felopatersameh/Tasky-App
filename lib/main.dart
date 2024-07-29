@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tasky/Config/Themes/thems.dart';
 import 'package:tasky/Features/Home/domain/repositories/home_repo_impl.dart';
@@ -24,7 +25,12 @@ void main() async {
   await CashHelper.init();
   // String ? token =CashHelper.getData(key: "RefreshToken");
   // print(token);
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
