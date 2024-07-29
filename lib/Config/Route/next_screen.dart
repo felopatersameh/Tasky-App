@@ -53,7 +53,7 @@ Future<void> pushNextAndRemove(context, String screen) async {
   await Navigator.pushNamedAndRemoveUntil(
     context,
     screen,
-        (route) => true,
+        (route) => false,
   );
 }
 
