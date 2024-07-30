@@ -8,7 +8,7 @@ import '../../Features/Home/presentation/pages/home_screen.dart';
 import '../../Features/Profile/presentation/pages/profile_screen.dart';
 import '../../Features/SignUp/presentation/pages/sing_up_screen.dart';
 import '../../Features/Splash/splash_screen.dart';
-import '../../Features/TaskDetails/presentation/pages/taks_details_screen.dart';
+import '../../Features/TaskDetails/presentation/pages/tass_details_screen.dart';
 
 class Routes {
   static const String routeInSplash = '/';

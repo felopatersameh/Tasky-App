@@ -1,11 +1,7 @@
-import 'package:intl/intl.dart';
-import 'package:tasky/Core/Network/Local/local_string.dart';
 import 'package:tasky/Core/Resources/string.dart';
 import '../../Features/Login/presentation/manager/log_in_cubit.dart';
 import '../../Features/SignUp/presentation/manager/sing_up_cubit.dart';
-import '../Network/Local/cash_helper.dart';
-import '../Network/Remote/dio.dart';
-import '../Network/Remote/endpoints.dart';
+
 
 Future<void> validateLogIn(context,
     {var key, required String password, required String phone}) async {
@@ -75,16 +71,16 @@ String? defaultValidate({required String text, required String validate}) {
   }
 
 //************************************************ ///validate Name
-// String? validateName({required String name}) {
-//   if (name.isEmpty) {
-//     return AppStrings.nameValidate;
-//   }
-//   // Check if the name contains any digits or special characters
-//   else if (RegExp(r'[0-9!@#$%^&*(),.?":{}|<>]').hasMatch(name)) {
-//     return 'The name cannot contain digits or special characters.';
-//   }
-//   return null;
-// }
+String? validateName({required String name}) {
+  if (name.isEmpty) {
+    return AppStrings.nameValidate;
+  }
+  // Check if the name contains any digits or special characters
+  else if (RegExp(r'[0-9!@#$%^&*(),.?":{}|<>]').hasMatch(name)) {
+    return 'The name cannot contain digits or special characters.';
+  }
+  return null;
+}
 
 //************************************************ ///validate Phone
 String? validatePhone(String phone) {
@@ -110,39 +106,19 @@ String? validatePhone(String phone) {
   return null;
 }
 
-Future<String?> refreshToken() async {
-  CashHelper.removeData(
-    key: LocalString.token,
-  );
-  await DioHelper.getData(
-    path: AppEndPoint.refresh,
-    queryParameters: {'token': LocalString.refreshToken},
-  ).then((onValue) {
-    if (onValue.statusCode == 200) {
-      final newTokens = onValue.data;
-      CashHelper.saveData(
-          key: LocalString.token, value: newTokens['access_token']);
-      print('access_token: ${newTokens['access_token']}');
-      return newTokens['access_token'];
-    }
-  }).catchError((onError) {
-    return onError.toString();
-  });
-  return null;
-}
 
-String formatDate(String dateTime2) {
-  DateTime dateTime = DateTime.parse(dateTime2);
-  final day = dateTime.day;
-  final month = DateFormat.MMMM().format(dateTime);
-  final year = dateTime.year;
-  return "$day $month,$year";
-}
-
-String formatDate2(String dateTime2) {
-  DateTime dateTime = DateTime.parse(dateTime2);
-  final day = dateTime.day;
-  final month = dateTime.month;
-  final year = dateTime.year;
-  return "$day/$month/$year";
-}
+// String formatDate(String dateTime2) {
+//   DateTime dateTime = DateTime.parse(dateTime2);
+//   final day = dateTime.day;
+//   final month = DateFormat.MMMM().format(dateTime);
+//   final year = dateTime.year;
+//   return "$day $month,$year";
+// }
+//
+// String formatDate2(String dateTime2) {
+//   DateTime dateTime = DateTime.parse(dateTime2);
+//   final day = dateTime.day;
+//   final month = dateTime.month;
+//   final year = dateTime.year;
+//   return "$day/$month/$year";
+// }

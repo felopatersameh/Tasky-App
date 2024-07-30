@@ -1,0 +1,1 @@
+import 'package:flutter/material.dart';import '../../../../Core/Resources/string.dart';import 'build_popup_menu_button.dart';AppBar customAppBarTaskDetails(String id ) {  return AppBar(title: const Text(AppStrings.newTask), actions: [    BuildPopupMenuButton(      id: id,    ),  ]);}

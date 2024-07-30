@@ -46,7 +46,7 @@ class AppColors {
 
   // tab bar
   static const Color colorBackGroundTabBarSelected = colorPrimary;
-  static const Color colorBackGroundTabBarUnSelected = Color(0xffF0ECFF);
+  static const Color colorBackGroundTabBarUnSelected = colorSecond;
   static const Color colorLabelTabBarSelected = colorsText2;
   static const Color colorLabelTabBarUnSelected = Color(0xff7C7C80);
 
