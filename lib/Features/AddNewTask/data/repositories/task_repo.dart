@@ -1,0 +1,1 @@
+import 'dart:io';import 'package:dartz/dartz.dart';import '../../../../Core/Utils/Errors/failure.dart';import '../models/AddTaskModel.dart';abstract class AddTaskRepo {  Future<Either<Failure, String>>   uploadImage({required File image});  Future<Either<Failure, bool>> createNewTask({required AddTaskModel model});}

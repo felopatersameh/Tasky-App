@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tasky/Config/Themes/thems.dart';
+import 'package:tasky/Features/AddNewTask/domain/repositories/task_repo_impl.dart';
+import 'package:tasky/Features/AddNewTask/presentation/manager/new_task_cubit.dart';
 import 'package:tasky/Features/Home/domain/repositories/home_repo_impl.dart';
 import 'package:tasky/Features/Home/presentation/manager/home_cubit.dart';
 import 'package:tasky/Features/Login/domain/repositories/repo_impl_login.dart';
@@ -54,6 +56,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => TaskCubit(TaskRepoImpl()),
+        ),
+        BlocProvider(
+          create: (context) => NewTaskCubit(AddTaskRepoImpl()),
         ),
       ],
       child: MaterialApp(

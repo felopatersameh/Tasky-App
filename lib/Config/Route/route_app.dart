@@ -3,6 +3,7 @@ import 'package:tasky/Features/Home/data/models/TaskModel.dart';
 import 'package:tasky/Features/Login/presentation/pages/login_screen.dart';
 import 'package:tasky/Features/Start/start_screen.dart';
 
+import '../../Features/AddNewTask/presentation/pages/new_task_screen.dart';
 import '../../Features/Home/presentation/pages/home_screen.dart';
 import '../../Features/Profile/presentation/pages/profile_screen.dart';
 import '../../Features/SignUp/presentation/pages/sing_up_screen.dart';
@@ -41,7 +42,7 @@ class GeneratorRoutes {
       case (Routes.routeProfile):
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
         case (Routes.routeAddNew):
-        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+        return MaterialPageRoute(builder: (_) => const NewTaskScreen());
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold());
     }

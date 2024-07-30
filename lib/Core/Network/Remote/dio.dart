@@ -39,6 +39,14 @@ class DioHelper {
         },
       ),
     );
+    // dio.interceptors.add(LogInterceptor(
+    //   request: true,
+    //   requestHeader: true,
+    //   requestBody: true,
+    //   responseHeader: true,
+    //   responseBody: true,
+    //   error: true,
+    // ));
   }
 
   static Future<Response> getData({
@@ -62,12 +70,12 @@ class DioHelper {
 
   static Future<Response> postData({
     required String path,
-    required Map<String, dynamic> data,
+    required dynamic data,
     String? token,
     Map<String, dynamic>? queryParameters,
     Options? options,
   }) async {
-    options ??= Options();
+    options ??= Options(contentType: 'application/json');
     if (token != null) {
       options.headers = {
         'Authorization': 'Bearer $token',

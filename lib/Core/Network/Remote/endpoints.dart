@@ -9,4 +9,6 @@ class AppEndPoint
  static const String refresh ='auth/refresh-token';
  static const String delete ='todos/';
  static const String logout ='auth/logout';
+ static const String uploadImage ='upload/image';
+ static const String createTask ='todos';
 }
