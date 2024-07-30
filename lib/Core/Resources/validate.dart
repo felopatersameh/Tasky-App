@@ -43,66 +43,48 @@ String? defaultValidate({required String text, required String validate}) {
   return null;
 }
 
-//************************************************ ///validate Email
-String? validateEmail({required String email}) {
-  const String pattern = r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$';
-  final RegExp regex = RegExp(pattern);
-
-  //------------------------
-  if (email.isEmpty) {
-    return AppStrings.emailValidate;
-  } else if (!regex.hasMatch(email)) {
-    return 'The email address is badly formatted.';
-  }
-  // else if (validateCheck(email, "email").toString().isNotEmpty && singIn) {
-  //   return 'The email address has already been registered.';
-  // } else if (validateCheck(email, "email").toString().isEmpty && !singIn) {
-  //   return 'The email address has not registered.';
-  // }
-  return null;
-}
 
 //************************************************ ///validate Password
-String? validatePassword(bool singIn, {required String password}) {
-  if (password.isEmpty) {
-    return AppStrings.passwordValidate;
+  String? validatePassword(bool singIn, {required String password}) {
+    if (password.isEmpty) {
+      return AppStrings.passwordValidate;
+    }
+    // Password must contain at least 8 characters
+    else if (singIn) {
+      if (password.length < 8) {
+        return 'The password must be at least 8 characters long.';
+      }
+      // Password must contain at least one uppercase letter
+      else if (!password.contains(RegExp(r'[A-Z]'))) {
+        return 'The password must contain at least one uppercase letter.';
+      }
+      // Password must contain at least one lowercase letter
+      else if (!password.contains(RegExp(r'[a-z]'))) {
+        return 'The password must contain at least one lowercase letter.';
+      }
+      // Password must contain at least one digit
+      else if (!password.contains(RegExp(r'[0-9]'))) {
+        return 'The password must contain at least one digit.';
+      }
+      // Password must not contain only numbers
+      else if (RegExp(r'^[0-9]+$').hasMatch(password)) {
+        return 'The password must not contain only numbers.';
+      }
+    }
+    return null;
   }
-  // Password must contain at least 8 characters
-  else if (singIn) {
-    if (password.length < 8) {
-      return 'The password must be at least 8 characters long.';
-    }
-    // Password must contain at least one uppercase letter
-    else if (!password.contains(RegExp(r'[A-Z]'))) {
-      return 'The password must contain at least one uppercase letter.';
-    }
-    // Password must contain at least one lowercase letter
-    else if (!password.contains(RegExp(r'[a-z]'))) {
-      return 'The password must contain at least one lowercase letter.';
-    }
-    // Password must contain at least one digit
-    else if (!password.contains(RegExp(r'[0-9]'))) {
-      return 'The password must contain at least one digit.';
-    }
-    // Password must not contain only numbers
-    else if (RegExp(r'^[0-9]+$').hasMatch(password)) {
-      return 'The password must not contain only numbers.';
-    }
-  }
-  return null;
-}
 
 //************************************************ ///validate Name
-String? validateName({required String name}) {
-  if (name.isEmpty) {
-    return AppStrings.nameValidate;
-  }
-  // Check if the name contains any digits or special characters
-  else if (RegExp(r'[0-9!@#$%^&*(),.?":{}|<>]').hasMatch(name)) {
-    return 'The name cannot contain digits or special characters.';
-  }
-  return null;
-}
+// String? validateName({required String name}) {
+//   if (name.isEmpty) {
+//     return AppStrings.nameValidate;
+//   }
+//   // Check if the name contains any digits or special characters
+//   else if (RegExp(r'[0-9!@#$%^&*(),.?":{}|<>]').hasMatch(name)) {
+//     return 'The name cannot contain digits or special characters.';
+//   }
+//   return null;
+// }
 
 //************************************************ ///validate Phone
 String? validatePhone(String phone) {
