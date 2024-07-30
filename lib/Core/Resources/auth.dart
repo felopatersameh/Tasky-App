@@ -129,6 +129,9 @@ String? validatePhone(String phone) {
 }
 
 Future<String?> refreshToken() async {
+  CashHelper.removeData(
+    key: LocalString.token,
+  );
   await DioHelper.getData(
     path: AppEndPoint.refresh,
     queryParameters: {'token': LocalString.refreshToken},
@@ -138,8 +141,8 @@ Future<String?> refreshToken() async {
       CashHelper.saveData(
           key: LocalString.token, value: newTokens['access_token']);
       print('access_token: ${newTokens['access_token']}');
+      return newTokens['access_token'];
     }
-    return onValue.data['access_token'];
   }).catchError((onError) {
     return onError.toString();
   });
