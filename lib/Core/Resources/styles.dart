@@ -39,10 +39,6 @@ TextStyle getBigText() => _getTextStyle(
 //--------------------------------------------------------------------- Custom Default Text
 TextStyle getMediumText() => _getTextStyle(
     SizeFontManger.s14, WeightFontManger.w400, AppColors.colorsText3);
-//--------------------------------------------------------------------- Custom other Text
-// TextStyle getOtherText() => _getTextStyle(
-//         SizeFontManger.s13, WeightFontManger.w400, AppColors.colorPrimaryText)
-//     .copyWith(fontFamily: FamilyFontManger.otherFamily);
 //--------------------------------------------------------------------- Custom TextFields
 TextStyle getTextField() => getMediumText();
 
@@ -57,7 +53,7 @@ TextStyle getSmallText1() => _getTextStyle(
 TextStyle getSmallText2() => _getTextStyle(
     SizeFontManger.s18, WeightFontManger.w700, AppColors.colorTextInProfile);
 
-//--------------------------------------------------------------------- Custom
+//--------------------------------------------------------------------- Custom Other
 TextStyle getItemTitle() => _getTextStyle(
     SizeFontManger.s16, WeightFontManger.w700, AppColors.colorsText1);
 

@@ -1,8 +1,9 @@
 import 'package:intl/intl.dart';
+import 'package:tasky/Core/Network/Local/local_string.dart';
 import 'package:tasky/Core/Resources/string.dart';
 import '../../Features/Login/presentation/manager/log_in_cubit.dart';
 import '../../Features/SignUp/presentation/manager/sing_up_cubit.dart';
-import '../Network/Local/cachehelper.dart';
+import '../Network/Local/cash_helper.dart';
 import '../Network/Remote/dio.dart';
 import '../Network/Remote/endpoints.dart';
 
@@ -128,19 +129,17 @@ String? validatePhone(String phone) {
 }
 
 Future<String?> refreshToken() async {
-  final refreshToken = CashHelper.getData(key: 'RefreshToken');
   await DioHelper.getData(
     path: AppEndPoint.refresh,
-    queryParameters: {'token': refreshToken},
+    queryParameters: {'token': LocalString.refreshToken},
   ).then((onValue) {
-    print('access_token: ${onValue.data['access_token']}');
     if (onValue.statusCode == 200) {
       final newTokens = onValue.data;
-      String newAccessToken = newTokens['access_token'];
-      CashHelper.saveData(key: 'Token', value: newAccessToken);
-      print('access_token: $newAccessToken');
-      return newAccessToken;
+      CashHelper.saveData(
+          key: LocalString.token, value: newTokens['access_token']);
+      print('access_token: ${newTokens['access_token']}');
     }
+    return onValue.data['access_token'];
   }).catchError((onError) {
     return onError.toString();
   });

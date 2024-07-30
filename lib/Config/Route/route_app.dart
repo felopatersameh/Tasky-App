@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tasky/Features/Home/data/models/TaskModel.dart';
+import 'package:tasky/Features/Home/data/models/task_model.dart';
 import 'package:tasky/Features/Login/presentation/pages/login_screen.dart';
 import 'package:tasky/Features/Start/start_screen.dart';
 

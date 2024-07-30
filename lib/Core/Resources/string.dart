@@ -1,5 +1,6 @@
 class AppStrings {
   static const String nameOfApp = 'ShopSwift';
+  static const String unauthorized = 'Unauthorized';
 
   //-----------------------------------------------------login && singUp
   static const String login = 'LogIn';
