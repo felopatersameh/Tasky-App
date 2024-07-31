@@ -1,1 +1,0 @@
-part of 'task_cubit.dart';sealed class TaskState {}final class TaskInitial extends TaskState {}class TaskLoading extends TaskState {}class TaskSuccess extends TaskState {  final bool model;  TaskSuccess({required this.model});}class TaskFailed extends TaskState {  final String error;  TaskFailed({required this.error});}

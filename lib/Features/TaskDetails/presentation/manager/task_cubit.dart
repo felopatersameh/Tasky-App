@@ -1,1 +1,0 @@
-import 'package:flutter_bloc/flutter_bloc.dart';import 'package:tasky/Features/TaskDetails/data/repositories/task_repo.dart';part 'task_state.dart';class TaskCubit extends Cubit<TaskState> {  TaskCubit(this.taskRepo) : super(TaskInitial());  final TaskRepo taskRepo;  static TaskCubit get(context) => BlocProvider.of(context);}
