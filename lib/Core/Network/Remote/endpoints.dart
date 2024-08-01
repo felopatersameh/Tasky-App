@@ -11,4 +11,6 @@ class AppEndPoint
  static const String logout ='auth/logout';
  static const String uploadImage ='upload/image';
  static const String createTask ='todos';
+ static const String edit ='todos/';
+ static const String getOneTask ='todos/';
 }

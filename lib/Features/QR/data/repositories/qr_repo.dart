@@ -1,0 +1,1 @@
+import 'package:dartz/dartz.dart';import 'package:tasky/Features/Home/data/models/task_model.dart';import '../../../../Core/Utils/Errors/failure.dart';abstract class QrRepo {  Future<Either<Failure, TaskModel>> getOne({required String id});}

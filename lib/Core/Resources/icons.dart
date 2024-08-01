@@ -16,6 +16,9 @@ class AppIcons {
   static const Icon arrowDown = Icon(
     Icons.arrow_drop_down_circle_rounded,
   );
+  static const Icon save = Icon(
+    Icons.done_rounded,
+  );
 
 //----------------------------------------------------- For Home
   static const Icon moreVert = Icon(Icons.more_vert);

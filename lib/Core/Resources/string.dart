@@ -51,23 +51,37 @@ class AppStrings {
   static const String statusA = 'All';
   static const String statusW = 'waiting';
   static const String statusP = 'In progress';
+  static const String high = 'High Priority';
+  static const String medium = 'Medium Priority';
+  static const String low = 'Low Priority';
   static const String statusF = 'Finished';
-  static const String titleINAppBar = 'Logo';
   static const String titleList = 'My Tasks';
 
 //----------------------------------------------------- For TabBarItem
   static const String statusWv = 'waiting';
   static const String statusFv = 'finished';
-  static const String statusPv = 'Inprogress';
-  static const String high = 'high  ';
-  static const String medium = 'medium';
-  static const String low = 'low';
+  static const String statusPv = 'inProgress';
+  static const String highV = 'high';
+  static const String mediumV = 'medium';
+  static const String lowV = 'low';
 
 //----------------------------------------------------- For All Appbar
   static const String profile = "Profile";
   static const String newTask = "Add new task";
+  static const String detailsTask = "Task Details";
+  static const String titleINAppBar = 'Logo';
+  static const String editeINAppBar = edite;
 
 //----------------------------------------------------- For All PopupMenuButton
   static const String edite = 'Edite';
   static const String delete = 'Delete';
+
+//----------------------------------------------------- For Tasks
+
+  static const String title = "Task Title";
+  static const String hintTitle = "Enter Title here...";
+  static const String description = "Task Description";
+  static const String hintDescription = "Enter Description here...";
+  static const String dueDate = "Due date";
+  static const String addTask = "Add Task";
 }

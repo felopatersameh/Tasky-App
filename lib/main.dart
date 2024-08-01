@@ -11,12 +11,12 @@ import 'package:tasky/Features/Login/presentation/manager/log_in_cubit.dart';
 import 'package:tasky/Features/Profile/domain/repositories/profile_repo_impl.dart';
 import 'package:tasky/Features/Profile/presentation/manager/profile_cubit.dart';
 import 'package:tasky/Features/TaskDetails/domain/repositories/task_repo_impl.dart';
-import 'package:tasky/Features/TaskDetails/presentation/manager/task_cubit.dart';
 
 import 'Config/Route/route_app.dart';
 import 'Core/Network/Local/cash_helper.dart';
 import 'Core/Network/Remote/dio.dart';
 import 'Core/bloc_observer.dart';
+
 import 'Features/SignUp/domain/repositories/repo_impl_sing_up.dart';
 import 'Features/SignUp/presentation/manager/sing_up_cubit.dart';
 
@@ -25,8 +25,7 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CashHelper.init();
-  // String ? token =CashHelper.getData(key: "RefreshToken");
-  // print(token);
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -55,14 +54,10 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeCubit(HomeRepoImpl())..getListTasks(),
         ),
         BlocProvider(
-          create: (context) => TaskCubit(TaskRepoImpl()),
-        ),
-        BlocProvider(
           create: (context) => NewTaskCubit(AddTaskRepoImpl()),
         ),
       ],
       child: MaterialApp(
-        themeAnimationStyle: AnimationStyle.noAnimation,
         theme: themes,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: GeneratorRoutes.getRoute,
