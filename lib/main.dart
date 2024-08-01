@@ -17,6 +17,8 @@ import 'Core/Network/Local/cash_helper.dart';
 import 'Core/Network/Remote/dio.dart';
 import 'Core/bloc_observer.dart';
 
+import 'Features/QR/domain/repositories/qr_repo_impl.dart';
+import 'Features/QR/presentation/manager/qr_cubit.dart';
 import 'Features/SignUp/domain/repositories/repo_impl_sing_up.dart';
 import 'Features/SignUp/presentation/manager/sing_up_cubit.dart';
 
@@ -55,6 +57,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => NewTaskCubit(AddTaskRepoImpl()),
+        ),
+        BlocProvider(
+          create: (context) => QrCubit(QrRepoImpl()),
         ),
       ],
       child: MaterialApp(

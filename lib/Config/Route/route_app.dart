@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tasky/Features/Edit/presentation/pages/edit_screen.dart';
 import 'package:tasky/Features/Home/data/models/task_model.dart';
 import 'package:tasky/Features/Login/presentation/pages/login_screen.dart';
+import 'package:tasky/Features/QR/domain/repositories/qr_repo_impl.dart';
+import 'package:tasky/Features/QR/presentation/manager/qr_cubit.dart';
 import 'package:tasky/Features/Start/start_screen.dart';
 
 import '../../Features/AddNewTask/presentation/pages/new_task_screen.dart';
@@ -38,7 +41,8 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const SingUpScreen());
       case (Routes.routeTask):
         return MaterialPageRoute(
-            builder: (_) => TaskDetailsScreen(
+            builder: (_) =>
+                TaskDetailsScreen(
                   item: setting.arguments as TaskModel,
                 ));
       case (Routes.routeHome):
@@ -49,11 +53,13 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const NewTaskScreen());
       case (Routes.routeEdit):
         return MaterialPageRoute(
-            builder: (_) => EditScreen(
+            builder: (_) =>
+                EditScreen(
                   item: setting.arguments as TaskModel,
                 ));
       case (Routes.routeQr):
-        return MaterialPageRoute(builder: (_) => const QRViewExample());
+        return MaterialPageRoute(builder: (_) =>
+            const QRViewExample());
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold());
     }
