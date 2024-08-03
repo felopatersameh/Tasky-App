@@ -1,0 +1,1 @@
+part of 'user_cubit.dart';sealed class UserState {}final class ProfileInitial extends UserState {}class ProfileLoading extends UserState {}class ProfileSuccess extends UserState {  final ProfileModel model;  ProfileSuccess({required this.model});}class ProfileFailed extends UserState {  final String error;  ProfileFailed({required this.error});}

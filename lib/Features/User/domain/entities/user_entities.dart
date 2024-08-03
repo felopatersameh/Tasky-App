@@ -1,0 +1,1 @@
+class UserEntity {  final String? id;  final String? displayName;  final String? username;  final num? experienceYears;  final String? address;  final String? level;  UserEntity({    this.id,    this.displayName,    this.username,    this.experienceYears,    this.address,    this.level,  });}

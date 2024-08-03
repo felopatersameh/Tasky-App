@@ -1,0 +1,1 @@
+import 'package:dartz/dartz.dart';import '../../domain/entities/user_entities.dart';import '../../../../Core/Utils/Errors/failure.dart';abstract class UserRepo {  Future<Either<Failure, UserEntity>> getData();}
