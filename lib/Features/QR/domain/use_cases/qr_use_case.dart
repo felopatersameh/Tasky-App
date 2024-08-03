@@ -1,0 +1,1 @@
+import 'package:dartz/dartz.dart';import '../../../../Core/Utils/Errors/failure.dart';import '../../../Home/data/models/task_model.dart';import '../../data/repositories/qr_repo.dart';class QrUseCase {  final QrRepo qrRepo;  QrUseCase(this.qrRepo);  Future<Either<Failure, TaskModel>> execute({required String id}) {    return qrRepo.getOne(id: id);  }}

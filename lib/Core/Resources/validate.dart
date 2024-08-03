@@ -1,6 +1,6 @@
 import 'package:tasky/Core/Resources/string.dart';
-import '../../Features/Login/presentation/manager/log_in_cubit.dart';
-import '../../Features/SignUp/presentation/manager/sing_up_cubit.dart';
+import '../../Features/Authentication/Login/presentation/manager/log_in_cubit.dart';
+import '../../Features/Authentication/SignUp/presentation/manager/sing_up_cubit.dart';
 
 
 Future<void> validateLogIn(context,

@@ -1,0 +1,1 @@
+class TaskEntities {  final String? id;  final String? image;  final String? title;  final String? desc;  final String? priority;  final String? status;  TaskEntities({    this.id,    this.image,    this.title,    this.desc,    this.priority,    this.status,  });}

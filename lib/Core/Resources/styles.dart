@@ -21,7 +21,7 @@ class WeightFontManger {
 }
 
 class FamilyFontManger {
-  static const String defaultFamily = 'Montserrat';
+  static const String defaultFamily = 'DMSans';
 }
 
 TextStyle _getTextStyle(double size, FontWeight weight, Color color) {
@@ -61,4 +61,6 @@ TextStyle getItemDesc() => _getTextStyle(SizeFontManger.s14,
     WeightFontManger.w400, AppColors.colorPrimaryText.withOpacity(.6));
 
 TextStyle getItemPriority() => getSmallText1();
-TextStyle getItemDue() => getSmallText1().copyWith(fontWeight:WeightFontManger.w400 );
+
+TextStyle getItemDue() =>
+    getSmallText1().copyWith(fontWeight: WeightFontManger.w400);

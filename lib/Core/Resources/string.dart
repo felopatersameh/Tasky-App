@@ -38,7 +38,14 @@ class AppStrings {
   static const String signUpSeparatorText = 'Or $createAccount With';
 
   static const String hasAccountText = 'Already have an account?';
-
+  static const String fresh = 'Fresh';
+  static const String junior = 'Junior';
+  static const String midLevel = 'MidLevel';
+  static const String senior = 'senior';
+  static const String freshV = 'fresh';
+  static const String juniorV = 'junior';
+  static const String midLevelV = 'midLevel';
+  static const String seniorV = 'senior';
 //----------------------------------------------------- For Start Screen
   static const String start = 'Let’s Start ';
   static const String titleINStart = 'Task Management & To-Do List';
@@ -64,6 +71,7 @@ class AppStrings {
   static const String highV = 'high';
   static const String mediumV = 'medium';
   static const String lowV = 'low';
+
 
 //----------------------------------------------------- For All Appbar
   static const String profile = "Profile";

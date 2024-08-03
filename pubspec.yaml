@@ -53,6 +53,7 @@ dependencies:
   dotted_border: ^2.0.0
   http_parser: ^4.0.2
   qr_code_scanner: ^1.0.1
+  get_it: ^7.7.0
 
 
 
@@ -96,12 +97,18 @@ flutter:
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+#   example:
+  fonts:
+    - family: DMSans
+      fonts:
+        - asset: Assets/Fonts/DMSans_18pt-Medium.ttf
+          weight: 500
+        - asset: Assets/Fonts/DMSans_18pt-Regular.ttf
+          weight: 400
+        - asset: Assets/Fonts/DMSans_18pt-SemiBold.ttf
+          weight: 600
+        - asset: Assets/Fonts/DMSans_24pt-Bold.ttf
+          weight: 700
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
