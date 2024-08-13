@@ -1,16 +1,21 @@
-# tasky
+# Tasky
 
-todo task
+## Description
 
-## Getting Started
+Tasky is a simple and easy-to-use task management application built with Flutter. It allows users to create, edit, and delete tasks. Each task is associated with a unique QR code, which can be scanned to search for and display specific tasks.
 
-This project is a starting point for a Flutter application.
+## Key Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Task Management:** Create, edit, and delete tasks.
+- **QR Code Generation:** Each task has a unique QR code.
+- **QR Code Scanning:** Search for and display tasks using QR code scanning.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technologies Used
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter:** Framework for building the application.
+- **State Management:** `flutter_bloc`, `get_it`
+- **Networking & API Integration:** `dio`
+- **Persistent Storage:** `shared_preferences`
+- **QR Code Features:** `qr_flutter`, `qr_code_scanner`
+- **UI & Design:** `flutter_svg`, `cached_network_image`
+
