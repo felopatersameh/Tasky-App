@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tasky/Core/Utils/service_locator.dart';
+import 'package:tasky/Core/Network/service_locator.dart';
 import 'package:tasky/Features/AddTask/domain/use_cases/new_task_use_case.dart';
 import 'package:tasky/Features/AddTask/presentation/manager/new_task_cubit.dart';
 import 'package:tasky/Features/Edit/presentation/pages/edit_screen.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tasky/Config/Themes/thems.dart';
-import 'package:tasky/Core/Utils/service_locator.dart';
+import 'package:tasky/Core/Network/service_locator.dart';
 import 'package:tasky/Features/Home/domain/use_cases/home_use_case.dart';
 import 'package:tasky/Features/Home/presentation/manager/home_cubit.dart';
 import 'package:tasky/Features/User/domain/use_cases/user_use_case.dart';
