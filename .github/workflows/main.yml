@@ -1,1 +1,38 @@
-name: Build and Release [YourAppName]on:  push:    branches:      - master  # Replace with your target branch (e.g., main or master)jobs:  build:    name: Build and Release Tasky APK    runs-on: ubuntu-latest    steps:      - name: Checkout code        uses: actions/checkout@v3      - name: Set up Java        uses: actions/setup-java@v2        with:          distribution: 'zulu'          java-version: '11'      - name: Set up Flutter        uses: subosito/flutter-action@v2        with:          channel: 'stable'      - name: Get dependencies        run: flutter pub get      - name: Build APK        run: flutter build apk --release --split-per-abi      - name: Upload APK to Releases        uses: ncipollo/release-action@v1        with:          artifacts: "build/app/outputs/flutter-apk/app-release.apk" # Path to your APK          tag: v1.0.0  # Replace with the version tag (e.g., v1.0.0)          token: ${{ secrets.Tasky_TOKEN }}
+name: Build and Release [YourAppName]
+
+on:
+  push:
+    branches:
+      - master  # Replace with your target branch (e.g., main or master)
+
+jobs:
+  build:
+    name: Build and Release Tasky APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release --split-per-abi
+
+      - name: Upload APK to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*" # Path to your APK
+          tag: v1.0.0  # Replace with the version tag (e.g., v1.0.0)
+          token: ${{ secrets.Tasky_TOKEN }}
