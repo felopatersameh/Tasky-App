@@ -1,4 +1,4 @@
-name: Build and Release [YourAppName]
+name: Build and Release Tasky
 
 on:
   push:
