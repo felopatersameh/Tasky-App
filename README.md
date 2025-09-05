@@ -1,12 +1,12 @@
 # Tasky
-<p align="center"> 
-  <img width="800" height="600" alt="logo" src="https://github.com/user-attachments/assets/3100af5d-2ee7-4a90-813a-4ff2ce0ae21b" />
 
-  </p >
-## Description
 
 Tasky is a simple and easy-to-use task management application built with Flutter. It allows users to create, edit, and delete tasks. Each task is associated with a unique QR code, which can be scanned to search for and display specific tasks.
 
+<p align="center"> 
+  <img width="1280" height="720" alt="logo" src="https://github.com/user-attachments/assets/9e1681d9-bb1e-4d09-ae41-bc0c5f51dd41" />
+  </p >
+  
 ## Key Features
 
 - **Task Management:** Create, edit, and delete tasks.
